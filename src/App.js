@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
-
+import ButtonWithToolTips from "./ButtonWithToolTips";
+import './App.css'
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+ 
+  return(
+    <>
+      <ButtonWithToolTips tooltipcontent={
+        <div>
+          This Tooltip does not fit above the button <br/>
+          This is why its deployed below instead
+        </div>
+      }> Hover over me (tool tip above)
+       
+      </ButtonWithToolTips>
+      <div style={{height:50}}/>
+
+      <ButtonWithToolTips tooltipcontent={
+        <div>
+          This Tooltip fits above the content
+        </div>
+      }> Hover over me (tool tip below)
+      </ButtonWithToolTips>
+
+      <ButtonWithToolTips tooltipcontent={
+        <div>
+          This tooltip fits above the content
+        </div>
+      }> Hover over me (tool tip below)
+
+      </ButtonWithToolTips>
+    </>
+  )
+
 }
 
 export default App;
